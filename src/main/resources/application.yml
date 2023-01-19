@@ -1,0 +1,9 @@
+server:
+  servlet:
+    context-path: /api/v1
+spring:
+  batch:
+    job:
+      enabled: false
+  main:
+    allow-bean-definition-overriding: true
