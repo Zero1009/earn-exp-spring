@@ -36,12 +36,12 @@ public class SchedulerConfig {
         return price;
     }
 
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(fixedDelay = 2000000)
     public void computePrice() throws InterruptedException, JobInstanceAlreadyCompleteException, JobExecutionAlreadyRunningException, JobParametersInvalidException, JobRestartException {
         log.info("computing price at " + LocalDateTime.now().toEpochSecond(ZoneOffset.UTC));
         JobParameters jobParameter = new JobParametersBuilder().addLong("time", System.currentTimeMillis())
                 .toJobParameters();
         jobLauncher.run(processJob, jobParameter);
-        Thread.sleep(4000);
+        Thread.sleep(4000000);
     }
 }
